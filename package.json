@@ -1,0 +1,24 @@
+{
+  "name": "pixelated-template",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Pixelated starter template for Next.js, Typescript, and common configs",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "setup": "node scripts/setup.js"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.40.0"
+  }
+}
