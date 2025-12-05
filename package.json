@@ -1,24 +1,50 @@
 {
-  "name": "pixelated-template",
-  "version": "0.0.0",
-  "private": false,
-  "description": "Pixelated starter template for Next.js, Typescript, and common configs",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "setup": "node scripts/setup.js"
-  },
-  "dependencies": {
-    "next": "^16.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.0",
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.0.0",
-    "eslint": "^9.40.0"
-  }
+	"name": "pixelated-template",
+	"version": "0.1.1",
+	"private": false,
+	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
+	"scripts": {
+		"dev": "npm run clean && NODE_OPTIONS='--inspect' next dev  -p 3004 --experimental-https",
+		"build": "npm run clean && NODE_ENV=production next build",
+		"start": "npm run clean && next build && next start",
+		"generate-site-images": "node scripts/generate-site-images.js",
+		"lint": "next lint",
+		"clean": "rm -rf .next && rm -rf out",
+		"setup": "node scripts/setup.js"
+	},
+	"dependencies": {
+		"@pixelated-tech/components": "^3.1.4",
+		"md5": "^2.3.0",
+		"next": "^16.0.7",
+		"prop-types": "^15.8.1",
+		"react": "^19.2.1",
+		"react-dom": "^19.2.1",
+		"sass": "^1.94.2"
+	},
+	"devDependencies": {
+		"@types/md5": "^2.3.6",
+		"@types/node": "^24.10.1",
+		"@types/prop-types": "^15.7.15",
+		"@types/react": "^19.2.1",
+		"@types/react-dom": "^19.0.6",
+		"eslint": "^9.0.0",
+		"eslint-config-next": "^16.0.7",
+		"eslint-import-resolver-typescript": "^4.4.4",
+		"typescript": "^5.0.0"
+	},
+	"eslintConfig": {
+		"settings": {
+			"import/resolver": {
+				"typescript": {
+					"alwaysTryTypes": true,
+					"project": "./tsconfig.json"
+				}
+			}
+		}
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brianwhaley/pixelated-template.git"
+	}
 }
