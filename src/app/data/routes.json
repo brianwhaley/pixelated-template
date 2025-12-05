@@ -1,0 +1,41 @@
+{
+	"routes": [
+		{
+			"name": "Home",
+			"path": "/",
+			"title": "Pixelated Template - Home",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "About Us",
+			"path": "/about",
+			"title": "Pixelated Template - About Us",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Services",
+			"path": "/services",
+			"title": "Pixelated Template - Services",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Projects",
+			"path": "/projects",
+			"title": "Pixelated Template - Projects",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Blog",
+			"path": "/blog",
+			"title": "Pixelated Template - Blog",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Contact Us",
+			"path": "/contact",
+			"title": "Pixelated Template - Contact Us",
+			"description": "",
+			"keywords": ""
+		}
+	]
+}

@@ -36,5 +36,29 @@ if (pkg.private === true) {
 
 writeJSON(pkgFile, pkg)
 
+// Copy local example files if they don't exist
+const localExample = path.join(process.cwd(), '.local', 'pixelated.config.json.example')
+const localTarget = path.join(process.cwd(), '.local', 'pixelated.config.json')
+try {
+  if (fs.existsSync(localExample) && !fs.existsSync(localTarget)) {
+    fs.mkdirSync(path.join(process.cwd(), '.local'), { recursive: true })
+    fs.copyFileSync(localExample, localTarget)
+    console.log('Created .local/pixelated.config.json from example')
+  }
+} catch (e) {
+  /* Ignore copy errors */
+}
+
+const envExample = path.join(process.cwd(), '.env.local.example')
+const envTarget = path.join(process.cwd(), '.env.local')
+try {
+  if (fs.existsSync(envExample) && !fs.existsSync(envTarget)) {
+    fs.copyFileSync(envExample, envTarget)
+    console.log('Created .env.local from .env.local.example')
+  }
+} catch (e) {
+  /* Ignore copy errors */
+}
+
 console.log(`Setup complete. package.json updated with name=${pkg.name}`)
 console.log(`Run: npm install && npm run dev`) 

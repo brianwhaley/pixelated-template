@@ -1,0 +1,20 @@
+"use client";
+
+import React from "react";
+import { PageSection } from "@pixelated-tech/components";
+import { GoogleAnalytics, GoogleAnalyticsEvent } from "@pixelated-tech/components";
+
+export default function Footer() {
+	return (
+		<PageSection columns={1} padding="20px 0 0 0">
+			<div suppressHydrationWarning={true} >
+				<GoogleAnalytics id="" />
+				<hr style={{ margin: "0 auto", width: "80%" }} />
+				<br />
+				<div className="centered">
+					<p className="footer-text">&copy; {new Date().getFullYear()} Pixelated Technologies. All rights reserved.</p>
+				</div>
+			</div>
+		</PageSection>
+	);
+}
