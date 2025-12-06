@@ -15,9 +15,9 @@ export default function Header() {
 			<PageSection columns={1} id="header-section">
 				<SmartImage
 					id="logo"
-					src="/images/logo.svg"
+					src="/images/placeholder.png"
 					alt="Pixelated Template"
-					width={400}
+					width={120}
 					height={120}
 				/>
 			</PageSection>

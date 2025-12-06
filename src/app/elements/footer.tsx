@@ -2,11 +2,11 @@
 
 import React from "react";
 import { PageSection } from "@pixelated-tech/components";
-import { GoogleAnalytics, GoogleAnalyticsEvent } from "@pixelated-tech/components";
+import { GoogleAnalytics } from "@pixelated-tech/components";
 
 export default function Footer() {
 	return (
-		<PageSection columns={1} padding="20px 0 0 0">
+		<PageSection columns={1} max-width="1024px"padding="20px 0 0 0">
 			<div suppressHydrationWarning={true} >
 				<GoogleAnalytics id="" />
 				<hr style={{ margin: "0 auto", width: "80%" }} />
