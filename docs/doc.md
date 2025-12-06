@@ -23,6 +23,6 @@ echo "Updating packages..." && npm outdated | awk 'NR>1 {print $1"@"$4}' | while
 npm audit fix --force
 npm version patch --force
 git add * -v
-git commit -m "new sitemap, metatag generators"
+git commit -m "cleanup"
 git push -u pixelatedtemplate dev --tags
 git push pixelatedtemplate dev:main

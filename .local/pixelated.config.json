@@ -1,0 +1,8 @@
+{
+  "cloudinary": {
+    "product_env": "your_cloudinary_env",
+    "baseUrl": "https://res.cloudinary.com",
+    "secure": true,
+    "transforms": "f_auto,c_limit,q_auto,dpr_auto"
+  }
+}

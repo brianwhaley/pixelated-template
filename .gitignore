@@ -1,9 +1,9 @@
-node_modules
-.next
-.env.local
-.env
+
+/.next
+/certificates
+/coverage
+/dist
+/node_modules
 .DS_Store
 .idea
 .vscode
-coverage
-dist
