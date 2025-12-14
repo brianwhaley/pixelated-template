@@ -1,6 +1,6 @@
 {
 	"name": "pixelated-template",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"private": false,
 	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
 	"scripts": {
@@ -8,27 +8,27 @@
 		"build": "npm run clean && NODE_ENV=production next build",
 		"start": "npm run clean && next build && next start",
 		"generate-site-images": "node scripts/generate-site-images.js",
-		"lint": "next lint",
+		"lint": "eslint --fix",
 		"clean": "rm -rf .next && rm -rf out",
 		"setup": "node scripts/setup.js"
 	},
 	"dependencies": {
-		"@pixelated-tech/components": "^3.1.6",
+		"@pixelated-tech/components": "^3.2.8",
 		"md5": "^2.3.0",
-		"next": "^16.0.7",
+		"next": "^16.0.10",
 		"prop-types": "^15.8.1",
-		"react": "^19.2.1",
-		"react-dom": "^19.2.1",
-		"sass": "^1.94.2"
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3",
+		"sass": "^1.96.0"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.6",
-		"@types/node": "^24.10.1",
+		"@types/node": "^25.0.2",
 		"@types/prop-types": "^15.7.15",
 		"@types/react": "^19.2.1",
 		"@types/react-dom": "^19.0.6",
-		"eslint": "^9.0.0",
-		"eslint-config-next": "^16.0.7",
+		"eslint": "^9.39.2",
+		"eslint-config-next": "^16.0.10",
 		"eslint-import-resolver-typescript": "^4.4.4",
 		"typescript": "^5.0.0"
 	},
