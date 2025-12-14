@@ -1,6 +1,7 @@
 import { headers } from 'next/headers';
 import { getRouteByKey } from '@pixelated-tech/components/server';
 import { generateMetaTags } from "@pixelated-tech/components/server";
+import { LocalBusinessSchema } from '@pixelated-tech/components';
 import { PixelatedServerConfigProvider } from '@pixelated-tech/components/server';
 import LayoutClient from '@/app/elements/layout-client';
 import Header from '@/app/elements/header';
@@ -42,6 +43,23 @@ export default async function RootLayout({
 					image_width: "512",
 					favicon: "/images/favicon.ico"
 				}) }
+				<LocalBusinessSchema
+					name="Pixelated Technologies"
+					streetAddress="Denver, CO"
+					addressLocality="Denver"
+					addressRegion="CO"
+					postalCode="80202"
+					telephone="+1-720-555-0001"
+					url="https://pixelated.tech"
+					email="info@pixelated.tech"
+					image="/images/pix/pix-bg-512.gif"
+					priceRange="$"
+					description="Web development and digital solutions using Next.js, TypeScript, and modern technologies."
+					sameAs={[
+						"https://www.linkedin.com/company/pixelated-technologies",
+						"https://github.com/brianwhaley/pixelated"
+					]}
+				/>
 			</head>
 			<body>
 				<PixelatedServerConfigProvider>

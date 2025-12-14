@@ -1,29 +1,45 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import globals from "globals";
+import eslint from "@eslint/js";
+import pluginNext from "@next/eslint-plugin-next";
+import tseslint from "typescript-eslint";
+import parser from "@typescript-eslint/parser";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Add TypeScript import resolver to handle `@/*` paths defined in tsconfig
-  {
-    settings: {
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-          project: './tsconfig.json',
-        },
-      },
-    },
-  },
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
-
-export default eslintConfig;
+export default [
+	{
+		ignores: [
+			".next/",
+			"out/",
+			"build/",
+			"next-env.d.ts",
+			"node_modules/**",
+			"dist/",
+		],
+	},
+	{
+		files: ["**/*.{js,jsx,mjs,mjsx,cjs,cjsx,ts,tsx,mts,mtsx,cts,ctsx}"],
+		languageOptions: {
+			parser,
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
+			parserOptions: {
+				ecmaVersion: "latest",
+				sourceType: "module",
+				jsx: true,
+			},
+		},
+		plugins: {
+			"@next/next": pluginNext,
+			"@typescript-eslint": tseslint.plugin,
+		},
+		rules: {
+			...eslint.configs.recommended.rules,
+			...tseslint.configs.recommended[0].rules,
+			...tseslint.configs.recommended[1].rules,
+			...pluginNext.configs.recommended.rules,
+			"@next/next/no-img-element": "off",
+			"@next/next/no-html-link-for-pages": "off",
+		},
+	},
+];
