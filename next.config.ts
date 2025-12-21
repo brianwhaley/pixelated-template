@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
 
 	reactStrictMode: true,
 
+	experimental: {
+    	optimizeCss: true,
+  	},
+	transpilePackages: ['@pixelated-tech/components'],
+	trailingSlash: false,
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 	env: {
 		PIXELATED_CONFIG_JSON: process.env.PIXELATED_CONFIG_JSON,
 		PIXELATED_CONFIG_B64: process.env.PIXELATED_CONFIG_B64,
@@ -23,9 +31,7 @@ const nextConfig: NextConfig = {
 	},
 
 	async redirects() {
-		return [
-
-		];
+		return [];
 	},
 
 	turbopack: {},
