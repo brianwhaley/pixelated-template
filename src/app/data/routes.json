@@ -3,14 +3,31 @@
 		"name": "Pixelated Template",
 		"author": "Pixelated Template",
 		"description": "Pixelated Template - Modern Web Development Template",
+		"keywords": "pixelated template, web development template, modern web development",
 		"url": "https://www.pixelated.tech",
+		"email": "info@pixelated.tech",
 		"favicon": "/favicon.ico",
 		"favicon_sizes": "64x64 32x32 24x24 16x16",
 		"favicon_type": "image/x-icon",
 		"theme_color": "#ffffff",
 		"background_color": "#ffffff",
 		"default_locale": "en",
-		"display": "standalone"
+		"display": "standalone",
+		"image": "/images/pix-bg-512.gif",
+		"image_height": "512",
+		"image_width": "512",
+		"telephone": "+1-973-710-8008",
+		"address": {
+			"streetAddress": "10 Jade Circle",
+			"addressLocality": "Denville",
+			"addressRegion": "NJ",
+			"postalCode": "07834",
+			"addressCountry": "US"
+		},
+		"priceRange": "$",
+		"sameAs": [
+			"https://www.pixelated.tech"
+		]
 	},
 	"routes": [
 		{

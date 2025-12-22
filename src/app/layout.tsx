@@ -34,32 +34,10 @@ export default async function RootLayout({
 					title: metadata?.title ?? "",
 					description: metadata?.description ?? "",
 					keywords: metadata?.keywords ?? "",
-					site_name: "Pixelated Template",
-					email: "info@pixelated.tech",
 					origin: origin ?? "",
 					url: url ?? "",
-					image: "/images/pix/pix-bg-512.gif",
-					image_height: "512",
-					image_width: "512",
-					favicon: "/images/favicon.ico"
 				}) }
-				<LocalBusinessSchema
-					name="Pixelated Technologies"
-					streetAddress="Denver, CO"
-					addressLocality="Denver"
-					addressRegion="CO"
-					postalCode="80202"
-					telephone="+1-720-555-0001"
-					url="https://pixelated.tech"
-					email="info@pixelated.tech"
-					image="/images/pix/pix-bg-512.gif"
-					priceRange="$"
-					description="Web development and digital solutions using Next.js, TypeScript, and modern technologies."
-					sameAs={[
-						"https://www.linkedin.com/company/pixelated-technologies",
-						"https://github.com/brianwhaley/pixelated"
-					]}
-				/>
+				<LocalBusinessSchema siteInfo={myRoutes.siteInfo} />
 				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
 			</head>
 			<body>
