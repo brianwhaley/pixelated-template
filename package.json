@@ -1,6 +1,6 @@
 {
 	"name": "pixelated-template",
-	"version": "0.1.9",
+	"version": "0.1.10",
 	"private": false,
 	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
 	"scripts": {
@@ -13,7 +13,7 @@
 		"setup": "node scripts/setup.js"
 	},
 	"dependencies": {
-		"@pixelated-tech/components": "^3.3.2",
+		"@pixelated-tech/components": "^3.3.3",
 		"html-entities": "^2.6.0",
 		"md5": "^2.3.0",
 		"next": "^16.1.0",
