@@ -1,10 +1,10 @@
 {
 	"name": "pixelated-template",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"private": false,
 	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
 	"scripts": {
-		"dev": "npm run clean && NODE_OPTIONS='--inspect' next dev  -p 3004 --experimental-https",
+		"dev": "npm run clean && NODE_OPTIONS='--inspect' next dev  -p 3008 --experimental-https",
 		"build": "npm run clean && NODE_ENV=production next build",
 		"start": "npm run clean && next build && next start",
 		"generate-site-images": "node scripts/generate-site-images.js",
@@ -13,7 +13,7 @@
 		"setup": "node scripts/setup.js"
 	},
 	"dependencies": {
-		"@pixelated-tech/components": "^3.3.0",
+		"@pixelated-tech/components": "^3.3.1",
 		"html-entities": "^2.6.0",
 		"md5": "^2.3.0",
 		"next": "^16.1.0",
