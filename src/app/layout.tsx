@@ -36,6 +36,7 @@ export default async function RootLayout({
 					keywords: metadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
+					siteInfo: myRoutes.siteInfo
 				}) }
 				<LocalBusinessSchema siteInfo={myRoutes.siteInfo} />
 				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
