@@ -1,6 +1,6 @@
 {
 	"name": "pixelated-template",
-	"version": "0.1.10",
+	"version": "0.1.11",
 	"private": false,
 	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
 	"scripts": {
@@ -10,7 +10,10 @@
 		"generate-site-images": "node scripts/generate-site-images.js",
 		"lint": "eslint --fix",
 		"clean": "rm -rf .next && rm -rf out",
-		"setup": "node scripts/setup.js"
+		"config:vault": "npx tsx ./node_modules/@pixelated-tech/components/dist/scripts/config-vault.ts",
+		"config:encrypt": "npm run config:vault -- encrypt src/app/config/pixelated.config.json",
+		"config:decrypt": "npm run config:vault -- decrypt src/app/config/pixelated.config.json",
+		"release": "./node_modules/@pixelated-tech/components/dist/scripts/release.sh"
 	},
 	"dependencies": {
 		"@pixelated-tech/components": "^3.3.3",
@@ -24,7 +27,7 @@
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.6",
-		"@types/node": "^25.0.3",
+		"@types/node": "^25.0.9",
 		"@types/prop-types": "^15.7.15",
 		"@types/react": "^19.2.1",
 		"@types/react-dom": "^19.0.6",
