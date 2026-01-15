@@ -16,7 +16,7 @@ export default function Header() {
 				<SmartImage
 					id="logo"
 					src="/images/placeholder.png"
-					alt="Pixelated Template"
+					alt="__SITE_NAME__ Logo"
 					width={120}
 					height={120}
 				/>

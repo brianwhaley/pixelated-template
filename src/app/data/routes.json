@@ -1,11 +1,11 @@
 {
 	"siteInfo": {
-		"name": "Pixelated Template",
-		"author": "Pixelated Template",
-		"description": "Pixelated Template - Modern Web Development Template",
-		"keywords": "pixelated template, web development template, modern web development",
-		"url": "https://www.pixelated.tech",
-		"email": "info@pixelated.tech",
+		"name": "__SITE_NAME__",
+		"author": "__SITE_NAME__",
+		"description": "__SITE_NAME__ - Modern Web Development Template",
+		"keywords": "__SITE_NAME__, web development template, modern web development",
+		"url": "__SITE_URL__",
+		"email": "__EMAIL_ADDRESS__",
 		"favicon": "/favicon.ico",
 		"favicon_sizes": "64x64 32x32 24x24 16x16",
 		"favicon_type": "image/x-icon",
@@ -26,44 +26,38 @@
 		},
 		"priceRange": "$",
 		"sameAs": [
-			"https://www.pixelated.tech"
+			"__SITE_URL__"
 		]
 	},
 	"routes": [
 		{
 			"name": "Home",
 			"path": "/",
-			"title": "Pixelated Template - Home",
+			"title": "__SITE_NAME__ - Home",
 			"description": "",
 			"keywords": ""
 		} , {
-			"name": "About Us",
+			"name": "About",
 			"path": "/about",
-			"title": "Pixelated Template - About Us",
+			"title": "__SITE_NAME__ - About",
 			"description": "",
 			"keywords": ""
 		} , {
-			"name": "Services",
-			"path": "/services",
-			"title": "Pixelated Template - Services",
+			"name": "FAQs",
+			"path": "/faqs",
+			"title": "__SITE_NAME__ - FAQs",
 			"description": "",
 			"keywords": ""
 		} , {
 			"name": "Projects",
 			"path": "/projects",
-			"title": "Pixelated Template - Projects",
+			"title": "__SITE_NAME__ - Projects",
 			"description": "",
 			"keywords": ""
 		} , {
-			"name": "Blog",
-			"path": "/blog",
-			"title": "Pixelated Template - Blog",
-			"description": "",
-			"keywords": ""
-		} , {
-			"name": "Contact Us",
+			"name": "Contact",
 			"path": "/contact",
-			"title": "Pixelated Template - Contact Us",
+			"title": "__SITE_NAME__ - Contact",
 			"description": "",
 			"keywords": ""
 		}
@@ -85,12 +79,12 @@
 		"font-size3-max": { "value": "1.35rem", "type": "size", "group": "typography", "label": "Font size 3 max" },
 		"font-size4-min": { "value": "1.00rem", "type": "size", "group": "typography", "label": "Font size 4 min" },
 		"font-size4-max": { "value": "1.25rem", "type": "size", "group": "typography", "label": "Font size 4 max" },
-		"font-size5-min": { "value": "0.85rem", "type": "size", "group": "typography", "label": "Font size 5 min" },
+		"font-size5-min": { "value": "0.83rem", "type": "size", "group": "typography", "label": "Font size 5 min" },
 		"font-size5-max": { "value": "1.00rem", "type": "size", "group": "typography", "label": "Font size 5 max" },
-		"font-size6-min": { "value": "0.75rem", "type": "size", "group": "typography", "label": "Font size 6 min" },
+		"font-size6-min": { "value": "0.67rem", "type": "size", "group": "typography", "label": "Font size 6 min" },
 		"font-size6-max": { "value": "0.85rem", "type": "size", "group": "typography", "label": "Font size 6 max" },
-		"font-min-screen": { "value": "20rem", "type": "size", "group": "typography", "label": "Font min screen" },
-		"font-max-screen": { "value": "90rem", "type": "size", "group": "typography", "label": "Font max screen" },
+		"font-min-screen": { "value": "375px", "type": "size", "group": "typography", "label": "Font min screen" },
+		"font-max-screen": { "value": "1440px", "type": "size", "group": "typography", "label": "Font max screen" },
 		"border-radius": { "value": "0.5rem", "type": "size", "group": "layout", "label": "Border radius" },
 		"box-shadow": { "value": "0 2px 4px rgba(0,0,0,0.1)", "type": "shadow", "group": "layout", "label": "Box shadow" },
 		"transition": { "value": "all 0.3s ease", "type": "transition", "group": "layout", "label": "Transition" }

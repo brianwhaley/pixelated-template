@@ -4,6 +4,7 @@ import { generateMetaTags } from "@pixelated-tech/components/server";
 import { LocalBusinessSchema } from '@pixelated-tech/components/server';
 import { PixelatedServerConfigProvider } from '@pixelated-tech/components/server';
 import { VisualDesignStyles } from "@pixelated-tech/components/server";
+import type { SiteInfo } from '@pixelated-tech/components/server';
 import LayoutClient from '@/app/elements/layout-client';
 import Header from '@/app/elements/header';
 import Nav from '@/app/elements/nav';
@@ -36,7 +37,7 @@ export default async function RootLayout({
 					keywords: metadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
-					siteInfo: myRoutes.siteInfo
+					siteInfo: myRoutes.siteInfo as SiteInfo,
 				}) }
 				<LocalBusinessSchema siteInfo={myRoutes.siteInfo} />
 				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
