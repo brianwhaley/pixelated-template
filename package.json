@@ -12,7 +12,7 @@
 		"clean": "rm -rf .next && rm -rf out",
 		"config:vault": "npx tsx ./node_modules/@pixelated-tech/components/dist/scripts/config-vault.ts",
 		"config:encrypt": "npm run config:vault -- encrypt src/app/config/pixelated.config.json",
-		"config:decrypt": "npm run config:vault -- decrypt src/app/config/pixelated.config.json",
+		"config:decrypt": "npm run config:vault -- decrypt src/app/config/pixelated.config.json.enc",
 		"release": "./node_modules/@pixelated-tech/components/dist/scripts/release.sh"
 	},
 	"dependencies": {
