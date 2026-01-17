@@ -16,6 +16,9 @@ frontend:
         - node -v
         - npm run build
         - npm run generate-site-images
+    postBuild:
+      commands:
+        - npm run config:vault -- postbuild || (echo "Config postbuild decrypt failed" && exit 1) 
   artifacts:
     baseDirectory: .next
     files:
