@@ -60,6 +60,28 @@
 			"title": "__SITE_NAME__ - Contact",
 			"description": "",
 			"keywords": ""
+		},
+		{
+			"name": "Style Guide",
+			"hidden": true,
+			"path": "/styleguide",
+			"title": "__SITE_NAME__ - Style Guide",
+			"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
+			"keywords": [
+				"__SITE_NAME__",
+				"style guide"
+			]
+		},
+		{
+			"name": "Humans Txt",
+			"hidden": true,
+			"path": "/humans.txt",
+			"title": "__SITE_NAME__ - Humans Txt",
+			"description": "A Humans-Only page describing the people who worked on this website. ",
+			"keywords": [
+				"__SITE_NAME__",
+				"humans txt"
+			]
 		}
 	],
 	"visualdesign": {

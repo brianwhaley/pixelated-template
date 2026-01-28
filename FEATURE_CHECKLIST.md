@@ -21,6 +21,8 @@ This checklist serves two purposes:
 - **SCSS/Sass** support for advanced styling capabilities
 - **Responsive Design** - Mobile-first approach with flexible layouts
 - **Visual Design System** - Configurable design tokens (colors, fonts, spacing) via routes.json
+- **App-level loading & skeleton UI** — canonical `SkeletonLoading` available at `src/app/loading.tsx` (consistent page-level loading state)
+- **App Router global error boundary** — accessible `global-error` at `src/app/global-error.tsx` (branded, testable error UI)
 
 ### Routing & Navigation
 - **File-based Routing** - Automatic route generation from routes.json configuration
@@ -66,6 +68,7 @@ This checklist serves two purposes:
   - Update header, navigation, and footer text
   - Add customer-specific copy and messaging
   - Replace default images with customer assets
+  - **Verify loading & error pages:** confirm `src/app/loading.tsx` (loading skeleton) and `src/app/global-error.tsx` content/brand copy are updated or intentionally left as the canonical implementations
 - [ ] Update 404 page data in `src/app/data/404-data.json`:
   - Replace default images with customer-branded assets
   - Update error message text to match brand voice
@@ -114,6 +117,8 @@ This checklist serves two purposes:
   - Forms submit properly
   - Images load and are optimized
   - SEO tags are generated correctly
+  - **Loading behavior:** verify client navigations show `src/app/loading.tsx` (SkeletonLoading) on slow routes and that skeletons are accessible (aria-hidden + live region announces)
+  - **Global error boundary:** force an App Router error and verify `src/app/global-error.tsx` renders accessible messaging, appropriate status code, and a clear recovery path
 - [ ] Configure deployment settings:
   - Verify production environment variables are set on hosting platform
   - Configure hosting platform (Vercel, Netlify, etc.)

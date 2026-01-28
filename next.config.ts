@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 
 	experimental: {
-    	optimizeCss: true,
+    	optimizeCss: false,
   	},
 	transpilePackages: ['@pixelated-tech/components'],
 	trailingSlash: false,
@@ -15,8 +15,7 @@ const nextConfig: NextConfig = {
 		ignoreBuildErrors: true,
 	},
 	env: {
-		PIXELATED_CONFIG_JSON: process.env.PIXELATED_CONFIG_JSON,
-		PIXELATED_CONFIG_B64: process.env.PIXELATED_CONFIG_B64,
+		PIXELATED_CONFIG_KEY: process.env.PIXELATED_CONFIG_KEY,
 	},
 
 	images: {
@@ -37,6 +36,10 @@ const nextConfig: NextConfig = {
 	turbopack: {},
 
 	webpack: (config: any) => {
+		config.resolve.fallback = {
+			fs: false,
+			path: false
+		};
 		if (!config.resolve) config.resolve = {};
 		if (!config.resolve.alias) config.resolve.alias = {};
 		config.resolve.alias['@'] = path.resolve(__dirname, 'src');
