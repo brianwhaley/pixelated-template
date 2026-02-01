@@ -1,22 +1,23 @@
 {
 	"name": "pixelated-template",
-	"version": "0.1.13",
+	"version": "0.1.14",
 	"private": false,
 	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
 	"scripts": {
 		"dev": "npm run clean && NODE_OPTIONS='--inspect' next dev  -p 3008 --experimental-https",
 		"build": "npm run clean && NODE_ENV=production next build",
 		"start": "npm run clean && next build && next start",
-		"generate-site-images": "node ./node_modules/@pixelated-tech/components/dist/scripts/generate-site-images.js",
 		"lint": "eslint --fix",
 		"clean": "rm -rf .next && rm -rf out",
+		"generate-site-images": "node ./node_modules/@pixelated-tech/components/dist/scripts/generate-site-images.js",
 		"config:vault": "npx tsx ./node_modules/@pixelated-tech/components/dist/scripts/config-vault.ts",
 		"config:encrypt": "npm run config:vault -- encrypt src/app/config/pixelated.config.json",
 		"config:decrypt": "npm run config:vault -- decrypt src/app/config/pixelated.config.json.enc",
-		"release": "./node_modules/@pixelated-tech/components/dist/scripts/release.sh"
+		"release": "./node_modules/@pixelated-tech/components/dist/scripts/release.sh",
+		"update": "UPDATES=$(npm outdated | awk 'NR>1 {print $1\"@\"$4}' || true); if [ -n \"$UPDATES\" ]; then echo \"Updating the following packages: $UPDATES\"; echo \"$UPDATES\" | xargs npm install --force --save 2>/dev/null || true; echo \"✅ Successfully updated: $UPDATES\"; else echo \"✅ No dependency updates needed.\"; fi; npm audit fix 2>/dev/null || true"
 	},
 	"dependencies": {
-		"@pixelated-tech/components": "^3.11.9",
+		"@pixelated-tech/components": "^3.13.3",
 		"html-entities": "^2.6.0",
 		"md5": "^2.3.0",
 		"next": "^16.1.6",
@@ -35,6 +36,11 @@
 		"eslint-config-next": "^16.1.6",
 		"eslint-import-resolver-typescript": "^4.4.4",
 		"typescript": "^5.0.0"
+	},
+	"overrides": {
+		"@aws-sdk/xml-builder": {
+			"fast-xml-parser": "^5.3.4"
+		}
 	},
 	"eslintConfig": {
 		"settings": {

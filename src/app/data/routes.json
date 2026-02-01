@@ -82,6 +82,14 @@
 				"__SITE_NAME__",
 				"humans txt"
 			]
+		},
+		{
+			"name": "Security Txt",
+			"hidden": true,
+			"path": "/security.txt",
+			"title": "__SITE_NAME__ - Security Txt",
+			"description": "Security contact and vulnerability disclosure information.",
+			"keywords": ["__SITE_NAME__","security txt","security"]
 		}
 	],
 	"visualdesign": {
