@@ -20,6 +20,14 @@
 			"component" : "FormInput",
 			"props" : {
 				"type" : "hidden",
+				"id" : "domain",
+				"name" : "domain",
+				"value" : "__SITE_NAME__"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
+				"type" : "hidden",
 				"id" : "subject",
 				"name" : "subject",
 				"value" : "__SITE_NAME__ Contact Us Submit"

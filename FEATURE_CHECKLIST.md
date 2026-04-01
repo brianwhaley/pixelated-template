@@ -37,6 +37,8 @@ This checklist serves two purposes:
 - **Web App Manifest** - PWA-ready configuration
 - **Performance Optimized** - Built-in Next.js optimizations
 - **Proxy Middleware** - Header injection for SEO and routing (x-path, x-origin, x-url)
+- **Automated Rich Schemas** - LocalBusiness, WebSite, Breadcrumb, Product, Services, BlogPosts, Podcast, FAQ, Review, Resume, Recipe
+- ** Automaed SEO features**  - Sitemap.xml, Robots.txt, Humans.txt, Security.txt, Manifest.webmanifest
 
 ### Development Tools
 - **Setup Script** - Automated project initialization and configuration
@@ -54,82 +56,123 @@ This checklist serves two purposes:
 ## Adoption Checklist
 
 ### Phase 1: Initial Setup
-- [ ] Run `node scripts/setup.js <project-name> <git-repo-url>` to initialize the project
-- [ ] Update `package.json` with project-specific details (name, description, repository)
-- [ ] Install dependencies with `npm install`
-- [ ] Start development server with `npm run dev` and verify basic functionality
+- [  ] Run `node scripts/setup.js <project-name> <git-repo-url>` to initialize the project
+- [  ] Update `package.json` with project-specific details (name, description, repository)
+- [  ] Install dependencies with `npm install`
+- [  ] Start development server with `npm run dev` and verify basic functionality
+- [  ] Update `src/app/config/pixelated.config.json` with all config based keys and integration data
 
 ### Phase 2: Content Replacement
-- [ ] Update `src/app/data/routes.json`:
+- [  ] Update `src/app/data/routes.json`:
   - Replace siteInfo with customer details (name, description, URL, contact info)
   - Update route titles, descriptions, and keywords for each page
   - Configure visualdesign section with customer's brand colors and fonts
-- [ ] Replace placeholder content in page components:
+- [  ] Replace placeholder content in page components:
   - Update header, navigation, and footer text
   - Add customer-specific copy and messaging
   - Replace default images with customer assets
   - **Verify loading & error pages:** confirm `src/app/loading.tsx` (loading skeleton) and `src/app/global-error.tsx` content/brand copy are updated or intentionally left as the canonical implementations
-- [ ] Update 404 page data in `src/app/data/404-data.json`:
+- [  ] Update 404 page data in `src/app/data/404-data.json`:
   - Replace default images with customer-branded assets
   - Update error message text to match brand voice
+- [  ] Be sure to update Contact Us form with `src/app/data/contactform.json`
+- [  ] Update `src/app/data/faqs.json` with relevant FAQs
+- [  ] Set up Contentful for content management features
+  - Common content types are Pages, Reviews, Items, PhotoAlbums, and Media (images, videos)
+- [  ] Create / Update Blog Schedule in `public/data/blogcalendar.md`
+- [  ] Set up Wordpress Jetpack to email subscribers and post on social media platforms for you
+- [  ] Create / Update `public/data/updates.md` wit meeting notes, to-dos, etc.
+- [  ] Build basic pages
+  - Home Page
+  - About Us
+  - Blog , wordpress URL
+  - Contact Us, Contact Us JSON File
+  - Projects / Gallery
+  - Services 
 
 ### Phase 3: Branding & Styling
-- [ ] Customize visual design tokens in `routes.json`:
+- [  ] Customize visual design tokens in `routes.json`:
   - Update primary/secondary colors to match brand
   - Configure typography (header/body fonts, sizes)
   - Adjust layout properties (border radius, shadows, transitions)
-- [ ] Update favicon and app icons in `public/` directory
-- [ ] Modify component styles in `src/app/styles/` if needed
-- [ ] Test responsive design across different screen sizes
+- [  ] Update favicon and app icons in `public/` directory
+- [  ] Modify component styles in `src/app/styles/` if needed
+- [  ] Update Elements in `src/app/elements`
+  - Header
+  - Footer
+  - Nav
+- [  ] Test responsive design across different screen sizes
 
 ### Phase 4: Functionality Customization
-- [ ] Add or modify routes in `routes.json` for customer-specific pages
-- [ ] Customize page components in `src/app/(pages)/` directory
-- [ ] Set up environment variables:
+- [  ] Add or modify routes in `routes.json` for customer-specific pages
+- [  ] Customize page components in `src/app/(pages)/` directory
+- [  ] Set up environment variables:
   - Create `.env.local` file for local development
   - Configure production environment variables on hosting platform
   - Set up PIXELATED_CONFIG_JSON or PIXELATED_CONFIG_B64 for advanced configuration
-- [ ] Configure PixelatedServerConfigProvider:
+- [  ] Configure PixelatedServerConfigProvider:
   - Update config provider in `src/app/layout.tsx` with customer-specific settings
   - Integrate third-party services (analytics, CMS, payment processors)
   - Set up API endpoints and external service connections
   - Configure proxy headers for SEO and routing (x-path, x-origin, x-url)
-- [ ] Set up Google Analytics:
+- [  ] Set up Google Analytics:
   - Create Google Analytics account and property
   - Get tracking code (GA4 Measurement ID)
   - Add tracking code to footer component or config provider
   - Configure analytics events for key user interactions
-- [ ] Configure Cloudinary for image CDN:
+- [  ] Configure Cloudinary for image CDN:
   - Create Cloudinary account and get API credentials
   - Set up environment variables for Cloudinary configuration
   - Configure image optimization and CDN delivery
   - Update image references to use Cloudinary URLs for better performance
-- [ ] Integrate customer-specific features:
+- [  ] Integrate customer-specific features:
   - Forms (contact, newsletter, etc.)
   - Third-party integrations (analytics, CRM, etc.)
   - Custom components from Pixelated Components library
-- [ ] Update SEO configuration (meta tags, schema markup)
+- [  ] Update SEO configuration (meta tags, schema markup)
 
-### Phase 5: Testing & Deployment
-- [ ] Run `npm run build` to ensure production build works
-- [ ] Test all pages and functionality:
+### Phase 5: Social Media
+- [  ] Add / Update `src/app/elements/socialtags.tsx` with links to social media accounts
+- [  ] Create new social media accounts as necessary
+  - [  ] Google Business Profile
+  - [  ] Facebook
+  - [  ] Instagram
+  - [  ] X / Twitter
+  - [  ] Yelp
+  - [  ] Nextdoor
+  - [  ] Reddit 
+  - [  ] Pinterest
+  
+
+### Phase 6: Testing & Deployment
+- [  ] Run `npm run build` to ensure production build works
+- [  ] Test all pages and functionality:
   - Navigation works correctly
   - Forms submit properly
   - Images load and are optimized
   - SEO tags are generated correctly
   - **Loading behavior:** verify client navigations show `src/app/loading.tsx` (SkeletonLoading) on slow routes and that skeletons are accessible (aria-hidden + live region announces)
   - **Global error boundary:** force an App Router error and verify `src/app/global-error.tsx` renders accessible messaging, appropriate status code, and a clear recovery path
-- [ ] Configure deployment settings:
+- [  ] Test SEO features ar working properly
+  - Meta tags - title, description, keyword - are coming from routes.json
+  - Schemas are displaying proeprly
+  - Sitemap.xml
+  - Robots.txt
+  - Humans.txt
+  - Security.txt
+  - Manifest.webmanifest
+- [  ] Configure deployment settings:
   - Verify production environment variables are set on hosting platform
   - Configure hosting platform (Vercel, Netlify, etc.)
   - Set up domain and SSL certificates
-- [ ] Run final performance and accessibility tests
+- [  ] Run final performance and accessibility tests
 
-### Phase 6: Launch & Maintenance
-- [ ] Deploy to production environment
-- [ ] Set up monitoring and analytics
-- [ ] Create documentation for content editors (if applicable)
-- [ ] Plan for future updates and maintenance
+### Phase 7: Launch & Maintenance
+- [  ] Set up PIXELATED_CONFIG_KEY environment variable
+- [  ] Deploy to production environment
+- [  ] Set up monitoring and analytics
+- [  ] Create documentation for content editors (if applicable)
+- [  ] Plan for future updates and maintenance
 
 ## Additional Resources
 

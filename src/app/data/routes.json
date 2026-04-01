@@ -43,9 +43,33 @@
 			"description": "",
 			"keywords": ""
 		} , {
+			"name": "Blog",
+			"path": "/blog",
+			"title": "__SITE_NAME__ - Blog",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Contact",
+			"path": "/contact",
+			"title": "__SITE_NAME__ - Contact",
+			"description": "",
+			"keywords": ""
+		}, { 
 			"name": "FAQs",
 			"path": "/faqs",
 			"title": "__SITE_NAME__ - FAQs",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Partners",
+			"path": "/partners",
+			"title": "__SITE_NAME__ - Partners",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Podcast",
+			"path": "/podcast",
+			"title": "__SITE_NAME__ - Podcast",
 			"description": "",
 			"keywords": ""
 		} , {
@@ -55,41 +79,80 @@
 			"description": "",
 			"keywords": ""
 		} , {
-			"name": "Contact",
-			"path": "/contact",
-			"title": "__SITE_NAME__ - Contact",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Style Guide",
+			"name": "Services",
+			"path": "/services",
+			"title": "__SITE_NAME__ - Services",
+			"description": "A list of services offered by this company.",
+			"keywords": ["__SITE_NAME__","services"]
+		} , {
+			"name": "Admin",
 			"hidden": true,
-			"path": "/styleguide",
-			"title": "__SITE_NAME__ - Style Guide",
-			"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
-			"keywords": [
-				"__SITE_NAME__",
-				"style guide"
+			"routes": [ 
+				{ 
+					"name": "404", 
+					"path": "/404", 
+					"hidden": true,
+					"title": "__SITE_NAME__ - Page Not Found",
+					"description": "The page you requested could not be found.",
+					"keywords": ["__SITE_NAME__", "404", "page not found"]  
+				} , { 
+					"name": "Sitemap", 
+					"path": "/sitemap.xml", 
+					"hidden": true,
+					"title": "__SITE_NAME__ - Sitemap",
+					"description": "__SITE_NAME__ sitemap.xml",
+					"keywords": ["__SITE_NAME__", "sitemap.xml"]  
+				} , {
+					"name" : "Robots.txt",
+					"path" : "/robots.txt",
+					"hidden": true,
+					"title": "__SITE_NAME__ - Robots.txt",
+					"description": "__SITE_NAME__ robots.txt",
+					"keywords": ["__SITE_NAME__", "robots.txt"]
+				} , {
+					"name": "Web Manifest",
+					"path": "/manifest.webmanifest",
+					"hidden": true,
+					"title": "__SITE_NAME__ - Web Manifest",
+					"description": "__SITE_NAME__ web manifest",
+					"keywords": ["__SITE_NAME__", "manifest.webmanifest"]
+				} , { 
+					"name": "Humans Txt", 
+					"path": "/humans.txt", 
+					"hidden": true,
+					"title": "__SITE_NAME__ - Humans Txt",
+					"description": "Humans Txt",
+					"keywords": ["__SITE_NAME__", "humans txt"] 
+				} , {
+					"name": "Security Txt",
+					"hidden": true,
+					"path": "/security.txt",
+					"title": "__SITE_NAME__ - Security Txt",
+					"description": "Security contact and vulnerability disclosure information.",
+					"keywords": ["__SITE_NAME__","security txt","security"]
+				} , {
+					"name": "Style Guide",
+					"hidden": true,
+					"path": "/styleguide",
+					"title": "__SITE_NAME__ - Style Guide",
+					"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
+					"keywords": ["__SITE_NAME__","style guide"]
+				} , {
+					"name": "Blog Calendar",
+					"hidden": true,
+					"path": "/blogcalendar",
+					"title": "__SITE_NAME__ - Blog Calendar",
+					"description": "",
+					"keywords": ""
+				} , {
+					"name": "Updates",
+					"hidden": true,
+					"path": "/updates",
+					"title": "__SITE_NAME__ - Updates",
+					"description": "",
+					"keywords": ""
+				} 
 			]
-		},
-		{
-			"name": "Humans Txt",
-			"hidden": true,
-			"path": "/humans.txt",
-			"title": "__SITE_NAME__ - Humans Txt",
-			"description": "A Humans-Only page describing the people who worked on this website. ",
-			"keywords": [
-				"__SITE_NAME__",
-				"humans txt"
-			]
-		},
-		{
-			"name": "Security Txt",
-			"hidden": true,
-			"path": "/security.txt",
-			"title": "__SITE_NAME__ - Security Txt",
-			"description": "Security contact and vulnerability disclosure information.",
-			"keywords": ["__SITE_NAME__","security txt","security"]
 		}
 	],
 	"visualdesign": {

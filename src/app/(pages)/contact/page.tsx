@@ -9,21 +9,23 @@ import { Loading, ToggleLoading } from "@pixelated-tech/components";
 import { Modal, handleModalOpen } from "@pixelated-tech/components";
 import { Calendly } from "@pixelated-tech/components";
 import formData from "@/app/data/contactform.json";
+import routes from "@/app/data/routes.json";
+const siteInfo = (routes as any).siteInfo;
 
 export default function Contact() {
 
 	const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
 
-	const [modalContent /*, setModalContent */ ] = useState<React.ReactNode>(myContent);
+	const [modalContent /*, setModalContent */ ] = useState<NonNullable<React.ReactNode>>(myContent);
 	
 	function handleSubmit(e: FormEvent<HTMLFormElement>) {
-		ToggleLoading({show: true});
-		emailFormData(e as unknown as Event, postSubmit);
+		ToggleLoading({ show: true });
+		emailFormData(e.nativeEvent, postSubmit);
 	}
 
-	function postSubmit(e: FormEvent<HTMLFormElement>) {
-		handleModalOpen(e as MouseEvent);
-		ToggleLoading({show: false});
+	function postSubmit(e: Event) {
+		handleModalOpen(e as unknown as MouseEvent); // Cast to MouseEvent to satisfy signature
+		ToggleLoading({ show: false });
 		const myForm = e.target as HTMLFormElement;
 		myForm.reset();
 	}
@@ -62,11 +64,15 @@ export default function Contact() {
 				<PageSectionHeader title="Contact Information" />
 				<div style={{ margin: '0 auto' }}>
 					<h3>Address:</h3>
-					<p><a href="https://maps.app.goo.gl/2bD1zr43i5CmkfAk7" target="_blank" rel="noopener noreferrer">26504 Whyte Hardee Boulevard, Hardeeville, South Carolina 29927</a></p>
+					<p>
+						<a href="https://maps.app.goo.gl/2bD1zr43i5CmkfAk7" target="_blank" rel="noopener noreferrer">
+							{siteInfo.address.streetAddress}, {siteInfo.address.addressLocality}, {siteInfo.address.addressRegion} {siteInfo.address.postalCode}
+						</a>
+					</p>
 					<h3>Email:</h3>
-					<p><a href="mailto:__EMAIL_ADDRESS__">__EMAIL_ADDRESS__</a></p>
+					<p><a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a></p>
 					<h3>Phone:</h3>
-					<p><a href="tel:(908) 867-5309">(908) 867-5309</a></p>
+					<p><a href={`tel:${siteInfo.telephone}`}>{siteInfo.telephone}</a></p>
 				</div>
 			</PageSection>
 

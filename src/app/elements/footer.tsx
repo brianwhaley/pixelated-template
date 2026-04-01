@@ -3,6 +3,7 @@
 import React from "react";
 import { PageSection } from "@pixelated-tech/components";
 import { GoogleAnalytics } from "@pixelated-tech/components";
+import { PixelatedFooter } from "@pixelated-tech/components";
 
 export default function Footer() {
 	return (
@@ -13,6 +14,9 @@ export default function Footer() {
 				<br />
 				<div className="centered">
 					<p className="footer-text">&copy; {new Date().getFullYear()} __SITE_NAME__. All rights reserved.</p>
+
+					<PixelatedFooter />
+					
 				</div>
 			</div>
 		</PageSection>

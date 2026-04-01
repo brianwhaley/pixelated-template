@@ -1,7 +1,7 @@
 import { headers } from 'next/headers';
 import { getRouteByKey } from '@pixelated-tech/components/server';
 import { generateMetaTags } from "@pixelated-tech/components/server";
-import { LocalBusinessSchema } from '@pixelated-tech/components/server';
+import { WebsiteSchema, LocalBusinessSchema, ServicesSchema, BreadcrumbListSchema } from "@pixelated-tech/components";
 import { PixelatedServerConfigProvider } from '@pixelated-tech/components/server';
 import { VisualDesignStyles } from "@pixelated-tech/components/server";
 import type { SiteInfo } from '@pixelated-tech/components/server';
@@ -27,6 +27,8 @@ export default async function RootLayout({
 	const pathname = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
 	const metadata = getRouteByKey(myRoutes.routes, "path", pathname);
 
+	const siteInfo = myRoutes.siteInfo;
+
   return (
     <html lang="en">
 			<LayoutClient />
@@ -37,25 +39,20 @@ export default async function RootLayout({
 					keywords: metadata?.keywords ?? "",
 					origin: origin ?? "",
 					url: url ?? "",
-					siteInfo: myRoutes.siteInfo as SiteInfo,
+					siteInfo: siteInfo as SiteInfo,
 				}) }
-				<LocalBusinessSchema siteInfo={myRoutes.siteInfo} />
+				<BreadcrumbListSchema routes={myRoutes.routes} currentPath={pathname} siteUrl={siteInfo.url} />
+				<WebsiteSchema siteInfo={siteInfo as SiteInfo} />
+				<LocalBusinessSchema siteInfo={siteInfo} />
+				<ServicesSchema siteInfo={siteInfo} />
 				<VisualDesignStyles visualdesign={myRoutes.visualdesign} />
 			</head>
 			<body>
 				<PixelatedServerConfigProvider>
-					<header>
-						<Header />
-					</header>
-					<nav>
-						<Nav />
-					</nav>
-					<main>
-						{children}
-					</main>
-					<footer>
-						<Footer />
-					</footer>
+					<header><Header /></header>
+					<nav><Nav /></nav>
+					<main>{children}</main>
+					<footer><Footer /></footer>
 				</PixelatedServerConfigProvider>
 			</body>
 		</html>
