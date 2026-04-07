@@ -1,12 +1,9 @@
  
 "use client";
 
-import React, { useState, FormEvent } from "react";
+import React from "react";
 import { PageTitleHeader, PageSection, PageSectionHeader } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
-import { emailFormData } from "@pixelated-tech/components";
-import { Loading, ToggleLoading } from "@pixelated-tech/components";
-import { Modal, handleModalOpen } from "@pixelated-tech/components";
 import { Calendly } from "@pixelated-tech/components";
 import formData from "@/app/data/contactform.json";
 import routes from "@/app/data/routes.json";
@@ -14,27 +11,8 @@ const siteInfo = (routes as any).siteInfo;
 
 export default function Contact() {
 
-	const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
-
-	const [modalContent /*, setModalContent */ ] = useState<NonNullable<React.ReactNode>>(myContent);
-	
-	function handleSubmit(e: FormEvent<HTMLFormElement>) {
-		ToggleLoading({ show: true });
-		emailFormData(e.nativeEvent, postSubmit);
-	}
-
-	function postSubmit(e: Event) {
-		handleModalOpen(e as unknown as MouseEvent); // Cast to MouseEvent to satisfy signature
-		ToggleLoading({ show: false });
-		const myForm = e.target as HTMLFormElement;
-		myForm.reset();
-	}
-	
 	return (
 		<>
-			<Loading />
-			<Modal modalContent={modalContent} />
-
 			<PageTitleHeader title="Contact __SITE_NAME__" />
 
 			<PageSection columns={1} maxWidth="1024px" padding="20px" id="schedule-quote-section">
@@ -51,12 +29,7 @@ export default function Contact() {
 			<PageSection columns={1} maxWidth="1024px" padding="20px" id="contact-us-section">
 				<PageSectionHeader title="Contact Us" />
 				<div style={{ margin: '0 auto', border: '2px solid var(--accent1-color)', padding: '20px', borderRadius: '20px' }}>
-					<FormEngine 
-						name="contact-us" 
-						id="contact-us-form" 
-						formData={formData as any} 
-						onSubmitHandler={handleSubmit} 
-					/>
+					<FormEngine formData={formData as any} />
 				</div>
 			</PageSection>
 

@@ -1,4 +1,11 @@
 {
+	"properties": {
+		"name": "contact-us",
+		"id": "contact-us-form",
+		"toggleLoading": true,
+		"openModal": true,
+		"resetForm": true
+	},
 	"fields" : [
 		{
 			"component" : "FormInput",
@@ -20,6 +27,14 @@
 			"component" : "FormInput",
 			"props" : {
 				"type" : "hidden",
+				"id" : "subject",
+				"name" : "subject",
+				"value" : "__SITE_NAME__ Contact Us Submit"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
+				"type" : "hidden",
 				"id" : "domain",
 				"name" : "domain",
 				"value" : "__SITE_NAME__"
@@ -28,9 +43,15 @@
 			"component" : "FormInput",
 			"props" : {
 				"type" : "hidden",
-				"id" : "subject",
-				"name" : "subject",
-				"value" : "__SITE_NAME__ Contact Us Submit"
+				"id" : "formName",
+				"name" : "formName",
+				"value" : "contact-us"
+			}
+		},{
+			"component" : "FormHoneypot",
+			"props" : {
+				"id": "winnie",
+				"name" : "website"
 			}
 		},{
 			"component" : "FormInput",
@@ -117,15 +138,7 @@
 				"label" : "Message (required) : ",
 				"tooltip": "Please enter the details of your request"
 			}
-		},
-		{
-			"component" : "FormHoneypot",
-			"props" : {
-				"id": "winnie",
-				"name" : "website"
-			}
-		},
-		{
+		},{
 			"component" : "FormButton",
 			"props" : {
 				"type" : "submit",

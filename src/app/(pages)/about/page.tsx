@@ -13,9 +13,14 @@ export default function About() {
 
 	useEffect(() => {
 		if (email1) {
-			getGravatarProfile(email1).then((data) => {
-				setProfile1(data);
-			});
+			getGravatarProfile(email1)
+				.then((data) => {
+					setProfile1(data);
+				})
+				.catch(() => {
+					// Silently handle CORS or network errors
+					setProfile1(null);
+				});
 		}
 	}, [ email1 ]); 
 

@@ -1,6 +1,6 @@
 {
 	"name": "pixelated-template",
-	"version": "0.1.15",
+	"version": "0.1.16",
 	"private": false,
 	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
 	"scripts": {
@@ -18,18 +18,18 @@
 		"update": "bash node_modules/@pixelated-tech/components/dist/scripts/update.sh"
 	},
 	"dependencies": {
-		"@pixelated-tech/components": "^3.14.2",
+		"@pixelated-tech/components": "^3.15.1",
 		"html-entities": "^2.6.0",
 		"md5": "^2.3.0",
 		"next": "^16.2.2",
 		"prop-types": "^15.8.1",
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4",
-		"sass": "^1.98.0"
+		"sass": "^1.99.0"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.6",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.5.2",
 		"@types/prop-types": "^15.7.15",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.0.6",
